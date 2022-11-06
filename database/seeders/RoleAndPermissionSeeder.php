@@ -26,5 +26,15 @@ class RoleAndPermissionSeeder extends Seeder
             $permission = Permission::create(['name' => $ap]);
             $adminRole->givePermissionTo($permission);
         }
+
+        $salesPermissions = [
+            'manage-sales', 'view-sales', 'create-sales',
+            'edit-sales', 'delete-sales',
+        ];
+
+        foreach ($salesPermissions as $ap) {
+            $permission = Permission::create(['name' => $ap]);
+            $adminRole->givePermissionTo($permission);
+        }
     }
 }

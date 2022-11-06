@@ -7,8 +7,6 @@ use Inertia;
 use Illuminate\Http\Request;
 use App\Http\Resources\User as UsuarioResource;
 use App\Http\Resources\UserCollection as UserCollection;
-use App\Http\Resources\Rol as RolResource;
-use App\Http\Resources\RolCollection as RolCollection;
 use App\Http\Requests\UpdateUserRequest;
 use App\Http\Requests\UpdateRolRequest;
 use App\Http\Requests\UpdateUserTrabajoRequest;

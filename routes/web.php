@@ -3,6 +3,7 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PuestoController;
+use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use Inertia\Inertia;
 
@@ -42,6 +43,13 @@ Route::middleware('auth:sanctum')->name('admin.')->prefix('admin')->group(functi
     Route::put('/usuarios/{user:uuid}/updateroles', [Usercontroller::class, 'updateRoles'])->name('usuarios/updateroles');
     Route::put('/usuarios/{user:uuid}/update', [Usercontroller::class, 'update'])->name('usuarios/update');
     Route::put('/usuarios/{user:uuid}/updatedatostrabajo', [Usercontroller::class, 'updateTrabajo'])->name('usuarios/updatedatostrabajo');
+
+    /** Roles y Permisos */
+    Route::get('/roles/', [RoleController::class, 'index'])->name('roles/');
+    Route::get('/roles/create', [RoleController::class, 'create'])->name('roles/create');
+    Route::get('/roles/{role:id}/edit', [Rolecontroller::class, 'edit'])->name('roles/edit');
+    Route::put('/roles/{role:id}/update', [Rolecontroller::class, 'update'])->name('roles/update');
+    Route::post('/roles/', [Rolecontroller::class, 'store'])->name('roles/store');
 });
 Route::middleware([
     'auth:sanctum',

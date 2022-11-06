@@ -90,9 +90,9 @@ const navItems = [
                 icon: HomeIcon,
             },
             {
-                href: "/dashboard",
+                href: "/admin/roles",
                 active: false,
-                label: "Administración de Usuarios",
+                label: "Roles en el sistema",
                 children: [],
                 icon: HeartIcon,
             },
