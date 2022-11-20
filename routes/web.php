@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AgentController;
+use App\Http\Controllers\PacienteController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PuestoController;
@@ -50,6 +52,14 @@ Route::middleware('auth:sanctum')->name('admin.')->prefix('admin')->group(functi
     Route::get('/roles/{role:id}/edit', [Rolecontroller::class, 'edit'])->name('roles/edit');
     Route::put('/roles/{role:id}/update', [Rolecontroller::class, 'update'])->name('roles/update');
     Route::post('/roles/', [Rolecontroller::class, 'store'])->name('roles/store');
+
+    /** Pacientes */
+    Route::get('/pacientes/', [PacienteController::class, 'index'])->name('pacientes/');
+    Route::get('/pacientes/create', [PacienteController::class, 'create'])->name('pacientes/create');
+    Route::get('/pacientes/{paciente:uuid}/edit', [PacienteController::class, 'edit'])->name('pacientes/edit');
+    Route::post('/pacientes/', [PacienteController::class, 'store'])->name('pacientes/store');
+    Route::put('/pacientes/{paciente:uuid}/update', [PacienteController::class, 'update'])->name('pacientes/update');
+    Route::delete('/pacientes/{paciente:uuid}/delete', [PacienteController::class, 'destroy'])->name('pacientes/delete');
 });
 Route::middleware([
     'auth:sanctum',

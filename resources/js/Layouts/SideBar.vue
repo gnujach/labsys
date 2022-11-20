@@ -110,6 +110,14 @@ const navItems = [
                 children: [],
                 icon: HeartIcon,
             },
+            {
+                href: "/admin/pacientes",
+                active: false,
+                label: "Administración de Pacientes",
+                children: [],
+                icon: HeartIcon,
+            },
+
         ],
     },
     {

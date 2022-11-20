@@ -31,10 +31,20 @@ class RoleAndPermissionSeeder extends Seeder
             'manage-sales', 'view-sales', 'create-sales',
             'edit-sales', 'delete-sales',
         ];
+        $pacientesPermissions = [
+            'manage-pacientes', 'view-paciente', 'create-paciente',
+            'update-paciente', 'delete-paciente',
+        ];
+
 
         foreach ($salesPermissions as $ap) {
             $permission = Permission::create(['name' => $ap]);
             $adminRole->givePermissionTo($permission);
         }
+        foreach ($pacientesPermissions as $ap) {
+            $permission = Permission::create(['name' => $ap]);
+            $adminRole->givePermissionTo($permission);
+        }
+
     }
 }
