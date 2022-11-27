@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AgentController;
+use App\Http\Controllers\EstudioController;
 use App\Http\Controllers\PacienteController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -60,6 +61,18 @@ Route::middleware('auth:sanctum')->name('admin.')->prefix('admin')->group(functi
     Route::post('/pacientes/', [PacienteController::class, 'store'])->name('pacientes/store');
     Route::put('/pacientes/{paciente:uuid}/update', [PacienteController::class, 'update'])->name('pacientes/update');
     Route::delete('/pacientes/{paciente:uuid}/delete', [PacienteController::class, 'destroy'])->name('pacientes/delete');
+    /** Estudios */
+    Route::get('/estudios/', [EstudioController::class, 'index'])->name('estudios/');
+    Route::get('/estudios/create', [EstudioController::class, 'create'])->name('estudios/create');
+    Route::get('/estudios/createpaquete', [EstudioController::class, 'createPaquete'])->name('estudios/createpaquete');
+    Route::get('/estudios/{estudio:uuid}/edit', [EstudioController::class, 'edit'])->name('estudios/edit');
+    Route::post('/estudios/', [EstudioController::class, 'store'])->name('estudios/store');
+    Route::post('/estudios/storepaquete', [EstudioController::class, 'storePaquete'])->name('estudios/storepaquete');
+    Route::put('/estudios/{estudio:uuid}/update', [EstudioController::class, 'update'])->name('estudios/update');
+    Route::delete('/estudios/{estudio:uuid}/delete', [EstudioController::class, 'destroy'])->name('estudios/delete');
+    Route::get('/estudios/search',[EstudioController::class,'search'])->name('estudios/search');
+
+
 });
 Route::middleware([
     'auth:sanctum',

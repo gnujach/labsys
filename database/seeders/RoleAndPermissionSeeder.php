@@ -35,7 +35,10 @@ class RoleAndPermissionSeeder extends Seeder
             'manage-pacientes', 'view-paciente', 'create-paciente',
             'update-paciente', 'delete-paciente',
         ];
-
+        $estudiosPermissions = [
+            'manage-estudios', 'view-estudio', 'create-estudio',
+            'update-estudio', 'delete-estudio',
+        ];
 
         foreach ($salesPermissions as $ap) {
             $permission = Permission::create(['name' => $ap]);
@@ -45,6 +48,10 @@ class RoleAndPermissionSeeder extends Seeder
             $permission = Permission::create(['name' => $ap]);
             $adminRole->givePermissionTo($permission);
         }
+         foreach ($estudiosPermissions as $ap) {
+            $permission = Permission::create(['name' => $ap]);
+            $adminRole->givePermissionTo($permission);
+         }
 
     }
 }

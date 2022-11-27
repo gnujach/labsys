@@ -18,7 +18,7 @@ class PacienteService
             'genero'=> $request->input('genero'),
             'edad'=> $request->input('edad'),
             'direccion'=> $request->input('direccion'),
-            'by'=> $request->input('by'),
+            'by' => Auth::id(),
             'activo'=> $request->input('activo'),
             ]);
     }
@@ -34,7 +34,6 @@ class PacienteService
             'genero'=> $request->input('genero'),
             'edad'=> $request->input('edad'),
             'direccion'=> $request->input('direccion'),
-            'by'=> $request->input('by'),
             'activo'=> $request->input('activo'),
             'by' => Auth::id(),
         ]);

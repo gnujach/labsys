@@ -25,8 +25,8 @@ class StorePacienteRequest extends FormRequest
             'correo'  => ['nullable', 'email'],
             'genero' => [new Enum(PacienteGeneroEnum::class)],
             'direccion' => ['nullable', 'min:2', 'max:65'],
-//            'edad'  => ['required', 'min:0', 'max:120'],
-        'activo' => ['required','Boolean']
+            'edad'  => ['required', 'min:0', 'max:120'],
+            'activo' => ['required','Boolean']
         ];
     }
 }

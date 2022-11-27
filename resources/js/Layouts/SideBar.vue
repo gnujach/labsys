@@ -117,6 +117,13 @@ const navItems = [
                 children: [],
                 icon: HeartIcon,
             },
+{
+                href: "/admin/estudios",
+                active: false,
+                label: "Administración de Estudios",
+                children: [],
+                icon: HeartIcon,
+            },
 
         ],
     },

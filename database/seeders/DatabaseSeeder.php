@@ -3,6 +3,8 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Categoria;
+use App\Models\Tipoventa;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,6 +20,9 @@ class DatabaseSeeder extends Seeder
             DepartamentoSeeder::class,
             PuestoSeeder::class,
             RoleAndPermissionSeeder::class,
+            GrupoSeeder::class,
+            CategoriaSeeder::class,
+            TipoventaSeeder::class,
             UserSeeder::class,
         ]);
     }

@@ -28,6 +28,7 @@
         "chart.js": "^3.9.1",
         "fuse.js": "^6.6.2",
         "pinia": "^2.0.23",
-        "vue-chartjs": "^4.1.2"
+        "vue-chartjs": "^4.1.2",
+        "vue-currency-input": "^3.0.2"
     }
 }

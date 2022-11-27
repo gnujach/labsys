@@ -13,19 +13,12 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('pacientes', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid')->index()->unique();
             $table->string('nombre')->nullable(false);
-            $table->string('ap1')->nullable(true);
-            $table->string('ap2')->nullable(true);
-            $table->string('tel')->nullable(false);
-            $table->string('correo')->nullable(false);
-            $table->unsignedSmallInteger('edad')->nullable(true);
-            $table->enum('genero', ['Másculino', 'Femenino'])->nullable(false);
-            $table->string('direccion')->nullable(true);
-            $table->boolean('activo')->default(true);
             $table->unsignedSmallInteger('by')->nullable(false);
+            $table->boolean('activo')->default(true);
             $table->softDeletes();
             $table->timestamps();
         });
@@ -38,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('pacientes');
+        Schema::dropIfExists('categorias');
     }
 };

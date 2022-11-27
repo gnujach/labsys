@@ -7,24 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 use App\Traits\HasUuid;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Paciente extends Model
+class Categoria extends Model
 {
     use HasFactory, HasUuid, SoftDeletes;
-
     protected $fillable = [
         'uuid',
         'nombre',
-        'ap1',
-        'ap2',
-        'tel',
-        'correo',
-        'genero',
-        'edad',
-        'direccion',
-        'by',
         'activo'
-        ];
+    ];
 
+    public function estudios():\Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Estudio::class);
+    }
 
 
 }
